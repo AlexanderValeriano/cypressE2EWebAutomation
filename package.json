@@ -1,0 +1,19 @@
+{
+  "name": "cypresse2ewebautomation",
+  "version": "1.0.0",
+  "description": "Creating web automation project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderValeriano/cypressE2EWebAutomation.git"
+  },
+  "author": "AlexanderValeriano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderValeriano/cypressE2EWebAutomation/issues"
+  },
+  "homepage": "https://github.com/AlexanderValeriano/cypressE2EWebAutomation#readme"
+}
