@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AlexanderValeriano/cypressE2EWebAutomation/issues"
   },
-  "homepage": "https://github.com/AlexanderValeriano/cypressE2EWebAutomation#readme"
+  "homepage": "https://github.com/AlexanderValeriano/cypressE2EWebAutomation#readme",
+  "dependencies": {
+    "cypress": "^13.6.2"
+  }
 }
