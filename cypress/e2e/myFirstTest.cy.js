@@ -1,4 +1,7 @@
+/// <reference types="cypress" />
+
 //** describe comes from mocha  **//
+
 describe("first test suite", () => {
   it("test1", () => {
     cy.visit(
