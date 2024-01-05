@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 //** describe comes from mocha  **//
 
 describe("first test suite", () => {

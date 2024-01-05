@@ -18,5 +18,8 @@
   "homepage": "https://github.com/AlexanderValeriano/cypressE2EWebAutomation#readme",
   "dependencies": {
     "cypress": "^13.6.2"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
   }
 }
