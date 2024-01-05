@@ -34,9 +34,19 @@ input.search_query[name="search_query"]
 
 sudo npm install -D cypress-xpath
 Add entry in command.js
-    /// <reference types="cypress-xpath" />
-
+/// <reference types="cypress-xpath" />
 
 Add e2e.js
-    require("cypress-xpath");
+require("cypress-xpath");
 
+# Cypress Assertions
+
+1. Implicit assertions
+
+   should
+   and
+
+2. Explicit Assertions
+
+   expect more use in BDD
+   assert more use in TDD
