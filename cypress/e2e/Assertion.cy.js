@@ -1,4 +1,5 @@
 // const cypress = require("cypress");
+/// <reference types="cypress" />
 
 describe("Assertions demo", () => {
   it("Implicit assertions", () => {
@@ -28,6 +29,13 @@ describe("Assertions demo", () => {
         "eq",
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
       )
-      .and("contain", "orangehrm");
+      .and("contain", "orangehrm")
+      .and("not.contain", "alexander");
+    cy.title()
+      .should("include", "Orange")
+      .and("eq", "OrangeHRM")
+      .and("include", "HRM");
+
+    cy.get('img[alt="company-branding"]').should("be.visible").and("exist");
   });
 });
