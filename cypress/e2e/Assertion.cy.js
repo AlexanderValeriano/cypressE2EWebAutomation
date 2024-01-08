@@ -58,11 +58,19 @@ describe("Assertions demo", () => {
     cy.get("button[type='submit']").click();
 
     //***  BDD Assertions using Javascript **//
-    let expectedName = "Ashraf CollingsBrenna";
+    let expectedName = "a v";
 
     cy.get(".oxd-userdropdown-tab").then((el) => {
       let actualName = el.text();
-      expect(actualName).to.equal(expectedName);
+
+      // BDD Style
+      /* expect(actualName).to.equal(expectedName);
+      expect(actualName).to.not.equal(expectedName);
+ */
+      // TDD Style
+
+      assert.equal(actualName, expectedName);
+      //   assert.notEqual(actualName, expectedName);
     });
   });
 });
