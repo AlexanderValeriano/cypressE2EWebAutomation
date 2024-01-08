@@ -46,6 +46,14 @@ require("cypress-xpath");
    should
    and
 
+eq
+contain
+include
+exist
+have.lenght
+have.value
+etc...
+
 2. Explicit Assertions
 
    expect more use in BDD
