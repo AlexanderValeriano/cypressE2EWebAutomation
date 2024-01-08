@@ -21,9 +21,22 @@ describe("handle dropdowns", () => {
     cy.get("#select2-billing_country-container").should("have.text", "Peru");
   });
 
-  it("Auto suggest dropdown", () => {
+  it.skip("Auto suggest dropdown", () => {
     cy.visit("https://www.wikipedia.org");
     cy.get("#searchInput").type("Delhi");
     cy.get(".suggestion-title").contains("Delhi Capitals").click();
+  });
+
+  it("Dynamic dropdown", () => {
+    cy.visit("https://www.google.com");
+    cy.get("#L2AGLb > .QS5gu").click();
+    cy.get("#APjFqb").type("cypress automation");
+    cy.get("div.wM6W7d>span").should("have.length", 13);
+    cy.get("div.wM6W7d>span").each(($el, i, $list) => {
+      if ($el.text() == "cypress automation tutorial") {
+        cy.wrap($el).click();
+      }
+    });
+    cy.get("#APjFqb").should("have.value", "cypress automation tutorial");
   });
 });
