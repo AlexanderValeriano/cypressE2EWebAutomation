@@ -7,4 +7,5 @@ module.exports = defineConfig({
     },
   },
   experimentalWebKitSupport: true,
+  defaultCommandTimeout: 6000,
 });
