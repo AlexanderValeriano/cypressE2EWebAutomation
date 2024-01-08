@@ -1,4 +1,3 @@
-
 describe("CSSLocators", () => {
   it("cssLocators", () => {
     cy.visit("http://www.automationpractice.pl/index.php");

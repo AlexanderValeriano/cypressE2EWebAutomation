@@ -24,5 +24,5 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-/// <reference types="cypress" />
-/// <reference types="cypress-xpath" />
+/// <reference types="cypress" /> // for Cypress
+/// <reference types="cypress-xpath" /> // for Cypress Xpath

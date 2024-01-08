@@ -1,6 +1,3 @@
-// const cypress = require("cypress");
-/// <reference types="cypress" />
-
 describe("Assertions demo", () => {
   it("Implicit assertions", () => {
     cy.visit(
