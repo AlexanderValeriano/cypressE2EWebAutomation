@@ -55,7 +55,7 @@ describe("Alerts", () => {
 
   //*** 4) Authenticated Alert  **/
 
-  it.only("Authenticated Alert", () => {
+  it("Authenticated Alert", () => {
     //   Approach 1
     /*       cy.visit("https://the-internet.herokuapp.com/basic_auth", {
       auth: { username: "admin", password: "admin" },
