@@ -27,7 +27,7 @@ describe("Handle Tabs", () => {
     ).contains("olaola@das.com");
   });
 
-  it.only("Read all the rows & Columns data in the first page", () => {
+  it.skip("Read all the rows & Columns data in the first page", () => {
     cy.get('table[class="table table-bordered table-hover"]>tbody>tr').each(
       ($row, index, $rows) => {
         //** with wrap give us one row and we use a submethod within for get all the TDs */
@@ -40,5 +40,19 @@ describe("Handle Tabs", () => {
     );
   });
 
-  it("Pagination", () => {});
+  it.only("Pagination", () => {
+    let totalPages;
+    // Using substring and indexOf methods
+    //** Find total number of pages **/
+    cy.get(".col-sm-6.text-end").then((el) => {
+      let textValue = el.text();
+      console.log(textValue); // Showing 1 to 10 of 17400 (1740 Pages)
+      totalPages = textValue.substring(
+        textValue.indexOf("(") + 1,
+        textValue.indexOf("Pages") - 1
+      );
+      console.log(totalPages);
+      cy.log("Total number of pages in a table ====>" + totalPages);
+    });
+  });
 });
