@@ -41,9 +41,9 @@ describe("Handle Tabs", () => {
   });
 
   it.only("Pagination", () => {
-    let totalPages;
     // Using substring and indexOf methods
     //** Find total number of pages **/
+    /* let totalPages;
     cy.get(".col-sm-6.text-end").then((el) => {
       let textValue = el.text();
       console.log(textValue); // Showing 1 to 10 of 17400 (1740 Pages)
@@ -53,6 +53,25 @@ describe("Handle Tabs", () => {
       );
       console.log(totalPages);
       cy.log("Total number of pages in a table ====>" + totalPages);
-    });
+    }); */
+
+    let totalPages = 5;
+
+    for (let pag = 1; pag < totalPages; pag++) {
+      if (totalPages > 1) {
+        cy.log("****** Active page is ===" + pag);
+        cy.get("ul.pagination>li:nth-child(" + pag + ")").click();
+        cy.wait(1000);
+        cy.get('table[class="table table-bordered table-hover"]>tbody>tr').each(
+          ($row, index, $rows) => {
+            cy.wrap($row).within(() => {
+              cy.get("td:nth-child(3)").then((el) => {
+                cy.log(el.text()); // print email
+              });
+            });
+          }
+        );
+      }
+    }
   });
 });
