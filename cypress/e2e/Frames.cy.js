@@ -1,3 +1,5 @@
+import "cypress-iframe";
+
 describe("handling frames", () => {
   it("approach 1", () => {
     cy.visit("https://the-internet.herokuapp.com/iframe");
@@ -11,11 +13,20 @@ describe("handling frames", () => {
     iframe.clear().type("Welcome Alexander VALERIANO {ctrl+a}");
     cy.get("button[aria-label='Bold']").click();
   });
-  it.only("approach 2 - by using custom command", () => {
+  it("approach 2 - by using custom command", () => {
     cy.visit("https://the-internet.herokuapp.com/iframe");
     cy.getIframe("#mce_0_ifr")
       .clear()
       .type("Welcome Alexander VALERIANO {ctrl+a}");
+    cy.get("button[aria-label='Bold']").click();
+  });
+
+  it("approach 3 - by using cypress plugin", () => {
+    cy.visit("https://the-internet.herokuapp.com/iframe");
+    cy.frameLoaded("#mce_0_ifr"); // Load the frame
+    cy.iframe("#mce_0_ifr")
+      .clear()
+      .type("Excelente cabezon Pablito hijito {ctrl+a}");
     cy.get("button[aria-label='Bold']").click();
   });
 });
