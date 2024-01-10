@@ -11,11 +11,34 @@ describe("Handle Tabs", () => {
     cy.get("#menu-customer>ul>li:first-child").click();
   });
 
-  it("Check Number Rows & Columns", () => {});
+  it.skip("Check Number Rows & Columns", () => {
+    cy.get('table[class="table table-bordered table-hover"]>tbody>tr').should(
+      "have.length",
+      10
+    );
+    cy.get(
+      'table[class="table table-bordered table-hover"]>thead>tr>td'
+    ).should("have.length", 7);
+  });
 
-  it("Check cell data from specific row & Column", () => {});
+  it.skip("Check cell data from specific row & Column", () => {
+    cy.get(
+      'table[class="table table-bordered table-hover"]>tbody>tr:nth-child(2)>td:nth-child(3)'
+    ).contains("olaola@das.com");
+  });
 
-  it("Read all the rows & Columns data in the first page", () => {});
+  it.only("Read all the rows & Columns data in the first page", () => {
+    cy.get('table[class="table table-bordered table-hover"]>tbody>tr').each(
+      ($row, index, $rows) => {
+        //** with wrap give us one row and we use a submethod within for get all the TDs */
+        cy.wrap($row).within(() => {
+          cy.get("td").each(($column, index, $columns) => {
+            cy.log($column.text());
+          });
+        });
+      }
+    );
+  });
 
   it("Pagination", () => {});
 });
