@@ -52,7 +52,7 @@ describe("Mouse operations", () => {
       .should("have.value", "Hello World!");
   });
 
-  it.only("Drag and Drop", () => {
+  it("Drag and Drop using plugin", () => {
     cy.visit(
       "http://dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html"
     );
@@ -63,5 +63,18 @@ describe("Mouse operations", () => {
     // Even the element is hiden for perform the action we put {force:true}
     cy.get("#box6").drag("#box106", { force: true });
     // cy.get("#box6").drag("#box106");
+  });
+
+  it.only("Scrolling Page", () => {
+    cy.visit("https://www.countries-ofthe-world.com/flags-of-the-world.html");
+    // We can control the time in scrollIntoView
+    // Peruvian flag
+    cy.get(":nth-child(2) > tbody > :nth-child(41) > :nth-child(1) > img")
+      .scrollIntoView({ duration: 2000 })
+      .should("be.visible");
+    cy.get(":nth-child(1) > tbody > :nth-child(8) > :nth-child(1) > img")
+      .scrollIntoView({ duration: 2000 })
+      .should("be.visible");
+    cy.get("#footer").scrollIntoView({ duration: 1000 }).should("be.visible");
   });
 });
