@@ -65,7 +65,7 @@ describe("Mouse operations", () => {
     // cy.get("#box6").drag("#box106");
   });
 
-  it.only("Scrolling Page", () => {
+  it("Scrolling Page", () => {
     cy.visit("https://www.countries-ofthe-world.com/flags-of-the-world.html");
     // We can control the time in scrollIntoView
     // Peruvian flag
