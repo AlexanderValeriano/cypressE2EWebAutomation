@@ -1,3 +1,5 @@
+import "cypress-iframe";
+
 describe("Mouse operations", () => {
   it.skip("MouseHover", () => {
     cy.visit("https://demo.opencart.com/");
@@ -10,7 +12,7 @@ describe("Mouse operations", () => {
     ).should("be.visible");
   });
 
-  it.only("Right click", () => {
+  it("Right click", () => {
     cy.visit("https://swisnl.github.io/jQuery-contextMenu/demo.html");
     //**  Approach 1   */
 
@@ -21,5 +23,31 @@ describe("Mouse operations", () => {
 
     cy.get(".context-menu-one.btn.btn-neutral").rightclick();
     cy.get(".context-menu-icon-copy").should("be.visible");
+  });
+
+  it.only("Double click", () => {
+    cy.visit(
+      "https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick3"
+    );
+    cy.get("#accept-choices").click();
+    cy.frameLoaded("#iframeResult"); // Load the frame
+
+    //**  Approach 1 - trigger()  **//
+
+    cy.iframe("#iframeResult")
+      .find("button[ondblclick='myFunction()']")
+      .trigger("dblclick");
+    cy.iframe("#iframeResult")
+      .find("#field2")
+      .should("have.value", "Hello World!");
+
+    //**  Approach 1 - trigger()  **//
+
+    cy.iframe("#iframeResult")
+      .find("button[ondblclick='myFunction()']")
+      .dblclick();
+    cy.iframe("#iframeResult")
+      .find("#field2")
+      .should("have.value", "Hello World!");
   });
 });
