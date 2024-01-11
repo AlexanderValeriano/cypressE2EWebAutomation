@@ -11,7 +11,7 @@ describe("MyTestSuite", () => {
         if (userdata.username == "Admin" && userdata.password == "admin123") {
           cy.get(
             ".oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module"
-          ).should("have.text", userdata.expected);
+          ).should("have.text", userdata.expected); // Dashboard validation
           cy.get(".oxd-userdropdown-tab > .oxd-icon").click(); // logout
           cy.get(":nth-child(4) > .oxd-userdropdown-link").click(); // logout
         } else {
