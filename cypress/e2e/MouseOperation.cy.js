@@ -1,4 +1,5 @@
 import "cypress-iframe";
+require("@4tw/cypress-drag-drop");
 
 describe("Mouse operations", () => {
   it.skip("MouseHover", () => {
@@ -25,7 +26,7 @@ describe("Mouse operations", () => {
     cy.get(".context-menu-icon-copy").should("be.visible");
   });
 
-  it.only("Double click", () => {
+  it("Double click", () => {
     cy.visit(
       "https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick3"
     );
@@ -41,7 +42,7 @@ describe("Mouse operations", () => {
       .find("#field2")
       .should("have.value", "Hello World!");
 
-    //**  Approach 1 - trigger()  **//
+    //**  Approach 2 - bdlclick()  **//
 
     cy.iframe("#iframeResult")
       .find("button[ondblclick='myFunction()']")
@@ -49,5 +50,18 @@ describe("Mouse operations", () => {
     cy.iframe("#iframeResult")
       .find("#field2")
       .should("have.value", "Hello World!");
+  });
+
+  it.only("Drag and Drop", () => {
+    cy.visit(
+      "http://dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html"
+    );
+    // **  Approach 1 - install npm install plugin drag & drop  **//
+    cy.get("#box6").should("be.visible");
+    cy.get("#box106").should("be.visible");
+    cy.wait(3000);
+    // Even the element is hiden for perform the action we put {force:true}
+    cy.get("#box6").drag("#box106", { force: true });
+    // cy.get("#box6").drag("#box106");
   });
 });
