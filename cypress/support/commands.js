@@ -28,8 +28,14 @@
 /// <reference types="cypress-xpath" /> // for Cypress Xpath
 
 Cypress.Commands.add("getIframe", (iframe) => {
-  return cy.get(iframe)
+  return cy
+    .get(iframe)
     .its("0.contentDocument.body")
     .should("be.visible")
     .then(cy.wrap);
+});
+
+// custom command for clicking on link using label
+Cypress.Commands.add("clickLink", (label) => {
+  return cy.get("a").contains(label).click();
 });
