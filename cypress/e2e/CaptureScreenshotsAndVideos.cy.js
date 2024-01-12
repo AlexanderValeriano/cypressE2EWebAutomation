@@ -5,7 +5,7 @@ describe("mysuite", () => {
     cy.wait(5000);
     cy.get("#logo").screenshot("logo"); */
 
-    // ** Autolatically capture screenshot & video on failure - only when on execute through terminal
+    // ** Autolatically capture screenshot & video on failure - only when on execute through terminal CLI
 
     cy.get("li:nth-child(7) a:nth-child(1)").click(); // cameras
     cy.get("div[id='content'] h2").should("have.text", "Tablets");
