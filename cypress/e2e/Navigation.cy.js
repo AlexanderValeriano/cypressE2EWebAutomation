@@ -1,5 +1,5 @@
 describe("mySuite", () => {
-  it.only("NavigationsTest", () => {
+  it("NavigationsTest", () => {
     cy.visit("https://demo.opencart.com/");
     cy.title().should("eq", "Your Store"); // Home page
     cy.get(":nth-child(7) > .nav-link").click();
