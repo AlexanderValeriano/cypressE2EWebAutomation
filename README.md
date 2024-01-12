@@ -59,7 +59,6 @@ etc...
    expect more use in BDD
    assert more use in TDD
 
-
 SauceDemo.com (web UI)
 ultimateqa.com/automation (web UI)
 Sample E-commerce mobile app (Android, iOS)
@@ -80,3 +79,7 @@ E-commerce Clothing Site (web)
 Demoqa (web)
 Compendiumdev.co.uk (web)
 React shopping cart (React JS)
+
+# Install Mocha
+
+npm i --save-dev cypress-mochawesome-reporter
