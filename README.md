@@ -83,3 +83,5 @@ React shopping cart (React JS)
 # Install Mocha
 
 npm i --save-dev cypress-mochawesome-reporter
+
+# Page Object Model Pattern
