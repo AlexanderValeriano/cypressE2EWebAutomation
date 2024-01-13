@@ -12,8 +12,8 @@ describe("POM", () => {
       "Dashboard"
     );
   });
-
-  it.only("LoginTestWithPOM", () => {
+  // Using POM
+  it("LoginTestWithPOM", () => {
     cy.visit("https://opensource-demo.orangehrmlive.com/");
 
     const login = new Login();
@@ -22,5 +22,18 @@ describe("POM", () => {
     login.setPassword("admin123");
     login.clickSubmit();
     login.verifyLogin();
+  });
+  // Using POM with fixture
+  it.only("LoginTestWithPOM", () => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/");
+
+    cy.fixture("orangehrm").then((data) => {
+      const login = new Login();
+
+      login.setUsername(data.username);
+      login.setPassword(data.password);
+      login.clickSubmit();
+      login.verifyLogin();
+    });
   });
 });
