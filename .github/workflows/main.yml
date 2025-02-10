@@ -4,10 +4,10 @@ on:
     branches:
       - QA
   schedule:
-      - cron: '00 15 * * *'
+      - cron: '05 15 * * *'
 jobs:
   simple_test:
     runs-on: ubuntu-latest
     steps:
       - name: bonjour
-        run: echo "Hello world"
+        run: echo "Hello world 05 15 * * *"
