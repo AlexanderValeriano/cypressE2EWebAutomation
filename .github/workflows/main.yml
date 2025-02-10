@@ -1,10 +1,10 @@
 name: Workflow
 on:
   schedule:
-      - cron: '37 14 * * *'
+      - cron: '50 14 * * *'
 jobs:
-  simple_test:
+  test_schedule:
     runs-on: ubuntu-latest
     steps:
-      - name: bonjour
-        run: echo "Hello world 37 14 * * *"
+      - name: schedule
+        run: echo "Hello world 50 14 * * *"
