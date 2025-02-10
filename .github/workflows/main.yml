@@ -1,10 +1,7 @@
 name: Workflow
 on:
-  push:
-    branches:
-      - QA
   schedule:
-      - cron: '05 15 * * *'
+      - cron: '10 15 * * *'
 jobs:
   simple_test:
     runs-on: ubuntu-latest
