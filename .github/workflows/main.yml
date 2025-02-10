@@ -1,0 +1,10 @@
+name: Workflow
+on:
+  schedule:
+      - cron: '19 15 * * *'
+jobs:
+  simple_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bonjour
+        run: echo "Hello world 05 15 * * *"

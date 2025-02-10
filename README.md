@@ -85,3 +85,4 @@ React shopping cart (React JS)
 npm i --save-dev cypress-mochawesome-reporter
 
 # Page Object Model Pattern
+# Update test GitHub Actions
