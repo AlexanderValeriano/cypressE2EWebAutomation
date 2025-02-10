@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - QA
+  schedule:
+      - cron: '00 15 * * *'
 jobs:
   simple_test:
     runs-on: ubuntu-latest
